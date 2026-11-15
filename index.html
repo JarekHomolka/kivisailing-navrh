@@ -83,11 +83,6 @@ td.total { font-weight: 700; color: var(--navy); }
 .steps p { color: var(--muted); font-size: 14px; }
 .note { font-size: 13px; color: var(--muted); }
 
-.phone { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 24px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
-.qr { width: 148px; height: 148px; background: #fff; padding: 10px; border-radius: 8px; border: 1px solid var(--line); }
-.qr img, .qr canvas { width: 100% !important; height: 100% !important; }
-.phone-text { display: grid; gap: 8px; }
-.phone .url { font-family: ui-monospace, Consolas, monospace; font-size: 13px; color: var(--accent); user-select: all; overflow-wrap: anywhere; }
 .print-only { display: none; }
 
 @media print {
@@ -100,7 +95,7 @@ td.total { font-weight: 700; color: var(--navy); }
   .shots { grid-template-columns: 1fr; gap: 14px; }
   .shots .shot { break-inside: avoid; }
   .mobiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .box, .stat, .steps li, .tablewrap, figure, .phone, .stats, .issues, .cols, .flow { break-inside: avoid; }
+  .box, .stat, .steps li, .tablewrap, figure, .stats, .issues, .cols, .flow { break-inside: avoid; }
   .tablewrap { overflow: visible; }
   table { min-width: 0; }
   /* Sekce s tabulkou nebo postupem držet pohromadě (nadpis + obsah na jedné stránce) */
@@ -114,12 +109,9 @@ td.total { font-weight: 700; color: var(--navy); }
   .page .issues, .page .old { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page .cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .page .mobiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .page .phone { grid-template-columns: 120px minmax(0, 1fr); }
-  .page .qr { width: 120px; height: 120px; }
 }
 
 @media (max-width: 820px) {
-  .phone { grid-template-columns: 1fr; justify-items: start; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .issues, .shots, .old, .cols { grid-template-columns: 1fr; }
   .mobiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -130,45 +122,12 @@ td.total { font-weight: 700; color: var(--navy); }
   <header class="intro">
     <div class="eyebrow">Návrh nového e-shopu · listopad 2026</div>
     <h1>KiviSailing bez WordPressu</h1>
-    <p class="lead">Rychlejší web, funkční online platby a administrace, kterou zvládne majitel sám. Na stránce je rozbor současného webu, návrh designu, platební řešení a dvě varianty provozních nákladů.</p>
+    <p class="lead">Rychlejší web, funkční online platby a administrace, kterou zvládne majitel sám. Na stránce je návrh designu, rozbor současného webu, platební řešení a dvě varianty provozních nákladů.</p>
     <div class="meta"><span>kivisailing.cz</span><span>KiviSailing, s.r.o.</span><span>~78 produktů</span><span>CZ + EN · Kč + €</span></div>
   </header>
 
-  <section class="phone">
-    <div id="qr" class="qr" aria-label="QR kód s odkazem na návrh"></div>
-    <div class="phone-text">
-      <div class="eyebrow">Proklikejte si to v telefonu</div>
-      <h3>Naskenujte QR kód fotoaparátem</h3>
-      <p>Odkaz otevře tuto stránku v běžném prohlížeči, bez přihlášení a bez aplikace. U každé obrazovky je tlačítko „Otevřít mockup“, kde si web můžete proklikat a přepnout ceny mezi Kč a €.</p>
-      <p class="url">jarekhomolka.github.io/kivisailing-navrh</p>
-    </div>
-  </section>
-
   <section>
-    <div class="eyebrow">Výchozí stav</div>
-    <h2>Co jsme našli na současném webu</h2>
-    <div class="stats">
-      <div class="stat"><b class="num">5,4 s</b><small>plné načtení úvodní stránky</small><span class="vs">cíl pod 1,5 s</span></div>
-      <div class="stat"><b class="num">125</b><small>požadavků na serveru</small><span class="vs">cíl kolem 20</span></div>
-      <div class="stat"><b class="num">84 / 58</b><small>skriptů / CSS souborů</small><span class="vs">cíl jednotky</span></div>
-      <div class="stat"><b class="num">13</b><small>pluginů WordPressu</small><span class="vs">cíl 0</span></div>
-    </div>
-    <ul class="issues">
-      <li>Online platba nefunguje, objednávka přijde majiteli jen jako e-mail.</li>
-      <li>Karty produktů na úvodní stránce a ve výpisu jsou bez obrázků.</li>
-      <li>Ceny na české verzi jsou jen v eurech.</li>
-      <li>Pole „Stav skladu“ u produktu je prázdné.</li>
-      <li>Hero obrázek se načítá pozdě, chvíli je vidět bílá plocha.</li>
-      <li>V menu je nevysvětlená položka „···“.</li>
-    </ul>
-    <div class="old">
-      <figure class="shot"><img src="screenshots/soucasny-web-uvod.jpg" alt="Současný web – úvodní stránka s cookie lištou přes obsah"><figcaption><b>Současný úvod</b><span>cookie lišta překrývá obsah</span></figcaption></figure>
-      <figure class="shot"><img src="screenshots/soucasny-web-obchod.jpg" alt="Současný web – výpis produktů s prázdnými kartami"><figcaption><b>Současný výpis</b><span>karty bez obrázků</span></figcaption></figure>
-    </div>
-  </section>
-
-  <section>
-    <div class="eyebrow break-before">Návrh designu</div>
+    <div class="eyebrow">Návrh designu</div>
     <h2>Nový vzhled na počítači</h2>
     <p>Logo a barvy zůstávají (originální logo KiviSailing, námořnická a značková modrá), přibývá signální oranžová pro akce a tlačítko nákupu. Výrazné kondenzované písmo připomíná čísla na plachtách. Fotky a ceny produktů jsou převzaté ze současného webu (ceny v Kč jsou orientační přepočet z eur). Každý mockup se dá otevřít a proklikat, přepínač Kč / € funguje.</p>
     <div class="shots">
@@ -187,6 +146,29 @@ td.total { font-weight: 700; color: var(--navy); }
       <figure class="shot"><img src="screenshots/mobil-kategorie.png" alt="Mobil – kategorie"><figcaption><b>Kategorie</b></figcaption></figure>
       <figure class="shot"><img src="screenshots/mobil-produkt.png" alt="Mobil – detail produktu"><figcaption><b>Produkt</b></figcaption></figure>
       <figure class="shot"><img src="screenshots/mobil-pokladna.png" alt="Mobil – pokladna"><figcaption><b>Pokladna</b></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow break-before">Výchozí stav</div>
+    <h2>Co jsme našli na současném webu</h2>
+    <div class="stats">
+      <div class="stat"><b class="num">5,4 s</b><small>plné načtení úvodní stránky</small><span class="vs">cíl pod 1,5 s</span></div>
+      <div class="stat"><b class="num">125</b><small>požadavků na serveru</small><span class="vs">cíl kolem 20</span></div>
+      <div class="stat"><b class="num">84 / 58</b><small>skriptů / CSS souborů</small><span class="vs">cíl jednotky</span></div>
+      <div class="stat"><b class="num">13</b><small>pluginů WordPressu</small><span class="vs">cíl 0</span></div>
+    </div>
+    <ul class="issues">
+      <li>Online platba nefunguje, objednávka přijde majiteli jen jako e-mail.</li>
+      <li>Karty produktů na úvodní stránce a ve výpisu jsou bez obrázků.</li>
+      <li>Ceny na české verzi jsou jen v eurech.</li>
+      <li>Pole „Stav skladu“ u produktu je prázdné.</li>
+      <li>Hero obrázek se načítá pozdě, chvíli je vidět bílá plocha.</li>
+      <li>V menu je nevysvětlená položka „···“.</li>
+    </ul>
+    <div class="old">
+      <figure class="shot"><img src="screenshots/soucasny-web-uvod.jpg" alt="Současný web – úvodní stránka s cookie lištou přes obsah"><figcaption><b>Současný úvod</b><span>cookie lišta překrývá obsah</span></figcaption></figure>
+      <figure class="shot"><img src="screenshots/soucasny-web-obchod.jpg" alt="Současný web – výpis produktů s prázdnými kartami"><figcaption><b>Současný výpis</b><span>karty bez obrázků</span></figcaption></figure>
     </div>
   </section>
 
@@ -246,11 +228,5 @@ td.total { font-weight: 700; color: var(--navy); }
     </ol>
   </section>
 </main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-  // QR kód s odkazem na tento návrh (pro otevření v telefonu)
-  try { new QRCode(document.getElementById('qr'), { text: 'https://jarekhomolka.github.io/kivisailing-navrh/', width: 256, height: 256, colorDark: '#0b2545', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M }); } catch (e) {}
-</script>
 
 </html>
