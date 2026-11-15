@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KiviSailing – pokladna (návrh)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="checkout">
+<div id="site-header"></div>
+
+<div class="wrap">
+  <div class="steps">
+    <span class="s done"><i>✓</i>Košík</span><span class="bar"></span>
+    <span class="s done"><i>✓</i>Doprava</span><span class="bar"></span>
+    <span class="s on"><i>3</i>Platba</span><span class="bar"></span>
+    <span class="s"><i>4</i>Shrnutí</span>
+  </div>
+  <div class="checkout">
+    <div style="display:grid;gap:20px">
+      <div class="panel">
+        <h2>Doprava</h2>
+        <div class="choice on"><span class="dot"></span><div class="txt"><b>Zásilkovna – výdejní místo</b><small>Z-BOX Brno, Lidická 12 · změnit</small></div><span class="fee">89 Kč</span></div>
+        <div class="choice"><span class="dot"></span><div class="txt"><b>PPL – na adresu</b><small>Doručení následující pracovní den</small></div><span class="fee">149 Kč</span></div>
+        <div class="choice"><span class="dot"></span><div class="txt"><b>Osobní odběr – Lipůvka</b><small>Po domluvě, i o víkendu na regatě</small></div><span class="fee">zdarma</span></div>
+      </div>
+      <div class="panel">
+        <h2>Platba</h2>
+        <div class="choice on"><span class="dot"></span><div class="txt"><b>Kartou online nebo Apple / Google Pay</b><small>Zaplatíte hned, objednávku odešleme ještě dnes</small><div class="methods"><span>VISA</span><span>Mastercard</span><span>Apple Pay</span><span>Google Pay</span></div></div><span class="fee">zdarma</span></div>
+        <div class="choice"><span class="dot"></span><div class="txt"><b>Rychlý bankovní převod</b><small>Přesměrujeme vás do vaší banky, platba dorazí hned</small><div class="methods"><span>ČSOB</span><span>KB</span><span>Česká spořitelna</span><span>Fio</span><span>Raiffeisen</span><span>+ další</span></div></div><span class="fee">zdarma</span></div>
+        <div class="choice"><span class="dot"></span><div class="txt"><b>Převodem s QR kódem</b><small>QR kód naskenujete v mobilním bankovnictví, zboží odešleme po připsání platby</small></div><span class="fee">zdarma</span></div>
+        <div class="qrbox">
+          <svg viewBox="0 0 29 29" shape-rendering="crispEdges" id="qr"></svg>
+          <div><b>Ukázka QR platby</b><br>Účet: 2900000000/2010<br>Částka: <span class="num">12 079 Kč</span><br>VS: <span class="num">2026001234</span><br><small style="color:var(--muted)">Ukázka – skutečné údaje se doplní z objednávky</small></div>
+        </div>
+      </div>
+    </div>
+    <aside class="panel summary">
+      <h2>Vaše objednávka</h2>
+      <div class="line"><div class="th"><img src="assets/img/plachta-ilca4.jpg" alt=""></div><div><b>Plachta ILCA 4</b><small>S obalem · 1 ks</small></div><span class="num">11 990 Kč</span></div>
+      <div class="line"><div class="th"><img src="assets/img/zhikgrip.jpg" alt=""></div><div><b>ZhikGrip vyvažovací popruh</b><small>1 ks · dárek k plachtě</small></div><span class="num">0 Kč</span></div>
+      <div class="totals num">
+        <div><span>Zboží</span><span>11 990 Kč</span></div>
+        <div><span>Doprava – Zásilkovna</span><span>89 Kč</span></div>
+        <div><span>Platba</span><span>0 Kč</span></div>
+        <div class="grand"><span>Celkem s DPH</span><span>12 079 Kč</span></div>
+      </div>
+      <button class="btn btn-primary" style="width:100%">Zaplatit 12 079 Kč</button>
+      <div class="secure" data-i="lock"><span>Platbu zpracuje Comgate, údaje o kartě neuvidíme</span></div>
+    </aside>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="app.js"></script>
+<script>
+// Dekorativní "QR" vzor pro mockup (není to skutečný platební QR kód).
+(function(){const s=document.getElementById('qr');let h='';let x=12345;const r=()=>{x=(x*1103515245+12345)&0x7fffffff;return x/0x7fffffff};
+const finder=(ox,oy)=>{h+=`<rect x="${ox}" y="${oy}" width="7" height="7" fill="#0b2545"/><rect x="${ox+1}" y="${oy+1}" width="5" height="5" fill="#fff"/><rect x="${ox+2}" y="${oy+2}" width="3" height="3" fill="#0b2545"/>`};
+for(let y=0;y<29;y++)for(let x2=0;x2<29;x2++){const inF=(x2<8&&y<8)||(x2>20&&y<8)||(x2<8&&y>20);if(!inF&&r()>.52)h+=`<rect x="${x2}" y="${y}" width="1" height="1" fill="#0b2545"/>`;}
+finder(0,0);finder(22,0);finder(0,22);s.innerHTML=h;})();
+</script>
+</body>
+</html>
